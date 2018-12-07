@@ -28,7 +28,7 @@ setup(
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
-        'License :: MIT',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: POSIX',
         'Operating System :: Unix',

@@ -3,7 +3,7 @@ Utilpy Examples
 
 Install
 --------
-   pip install git+https://github.com/BkrmDahal/utilspy.git
+   pip install utilpy
 
 Examples
 ---------

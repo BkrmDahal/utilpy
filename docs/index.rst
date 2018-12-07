@@ -10,7 +10,7 @@ Collection of python utils.
 
 Install
 ========
-   pip install git+https://github.com/BkrmDahal/utilspy.git
+   pip install utilpy
 
 Utilspy Examples
 =================

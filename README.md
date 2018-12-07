@@ -1,13 +1,13 @@
 # Welcome to utilspy documentation!
-[![Documentation Status](https://readthedocs.org/projects/utilspy/badge/?version=latest)](https://utilspy.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/utilpy/badge/?version=latest)](https://utilpy.readthedocs.io/en/latest/?badge=latest)
 
 Collection of python utils.
 
-For detail [Here is Documentation](https://utilspy.readthedocs.io/en/latest/index.html)
+For detail [Here is Documentation](https://utilpy.readthedocs.io/en/latest/index.html)
 
 # Install 
 ```bash
-pip install git+https://github.com/BkrmDahal/utilspy.git
+pip3 install utilpy
 ```
 
 ____
@@ -18,7 +18,7 @@ ____
 
 import time
 
-from utilspy import log, files, decorator
+from utilpy import log, files, decorator
 
 # logger function 
 logs = log.Logger()

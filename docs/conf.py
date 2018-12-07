@@ -25,10 +25,10 @@ import sys
 import inspect
 sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../utilspy/'))
+sys.path.insert(0, os.path.abspath('../utilpy/'))
 
 # constant name <<change these value only>>
-PROJECT_NAME = 'utilspy'
+PROJECT_NAME = 'utilpy'
 AUTHOR = 'bkrm'
 VERSION = '0.0.1'
 
@@ -243,4 +243,4 @@ def linkcode_resolve(domain, info):
 
     filename = info['module'].replace('.', '/')
     # filename = '/'.join(filename.split('/')[1:])
-    return "https://github.com/BkrmDahal/utilspy/blob/master/%s.py%s" % (filename, linespec)
+    return "https://github.com/BkrmDahal/utilpy/blob/master/%s.py%s" % (filename, linespec)

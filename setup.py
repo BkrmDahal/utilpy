@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='utilpy',
-    version='0.1.2',
+    version='0.1.3',
     description='Collection of utils that we use often. ',
     long_description=long_description,
     long_description_content_type="text/markdown",

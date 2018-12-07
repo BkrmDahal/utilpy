@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+pyyaml
+sphinx
+sphinx_rtd_theme
+patool

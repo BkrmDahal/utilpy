@@ -23,14 +23,15 @@ import sphinx_rtd_theme
 import os
 import sys
 import inspect
-sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../utilpy/'))
+
+sys.path.insert(0, os.path.abspath("../../"))
+sys.path.insert(0, os.path.abspath("../"))
+sys.path.insert(0, os.path.abspath("../utilpy/"))
 
 # constant name <<change these value only>>
-PROJECT_NAME = 'utilpy'
-AUTHOR = 'bkrm'
-VERSION = '0.0.1'
+PROJECT_NAME = "utilpy"
+AUTHOR = "bkrm"
+VERSION = "0.0.1"
 
 
 # -- General configuration ------------------------------------------------
@@ -42,30 +43,31 @@ VERSION = '0.0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.coverage',
-              'sphinx.ext.doctest',
-              'sphinx.ext.linkcode',
-              'sphinx.ext.mathjax',
-              'sphinx.ext.autosummary',
-              'sphinx.ext.coverage'
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.linkcode",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.coverage",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['templates']
+templates_path = ["templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
 project = PROJECT_NAME
-copyright = '2018, {}'.format(AUTHOR)
+copyright = "2018, {}".format(AUTHOR)
 author = AUTHOR
 
 # The version info for the project you're documenting, acts as replacement for
@@ -82,15 +84,15 @@ release = VERSION
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build']
+exclude_patterns = ["_build"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -112,16 +114,16 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # documentation.
 #
 html_theme_options = {
-    'collapse_navigation': False,
-    'display_version': True,
-    'logo_only': True,
+    "collapse_navigation": False,
+    "display_version": True,
+    "logo_only": True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['static']
-html_logo = 'static/logo.png'
+html_static_path = ["static"]
+html_logo = "static/logo.png"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -129,12 +131,12 @@ html_logo = 'static/logo.png'
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
-    '**': [
-        'about.html',
-        'navigation.html',
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-        'donate.html',
+    "**": [
+        "about.html",
+        "navigation.html",
+        "relations.html",  # needs 'show_related': True theme option to display
+        "searchbox.html",
+        "donate.html",
     ]
 }
 
@@ -142,7 +144,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '{}_doc'.format(PROJECT_NAME)
+htmlhelp_basename = "{}_doc".format(PROJECT_NAME)
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -151,15 +153,12 @@ latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',
-
     # The font size ('10pt', '11pt' or '12pt').
     #
     # 'pointsize': '10pt',
-
     # Additional stuff for the LaTeX preamble.
     #
     # 'preamble': '',
-
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
@@ -169,8 +168,13 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, '{}.tex'.format(PROJECT_NAME), '{} Documentation'.format(PROJECT_NAME),
-     'AI2', 'manual'),
+    (
+        master_doc,
+        "{}.tex".format(PROJECT_NAME),
+        "{} Documentation".format(PROJECT_NAME),
+        "AI2",
+        "manual",
+    )
 ]
 
 
@@ -179,8 +183,13 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{}'.format(PROJECT_NAME), '{} Documentation'.format(PROJECT_NAME),
-     [author], 1)
+    (
+        master_doc,
+        "{}".format(PROJECT_NAME),
+        "{} Documentation".format(PROJECT_NAME),
+        [author],
+        1,
+    )
 ]
 
 
@@ -190,11 +199,16 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, PROJECT_NAME, '{} Documentation'.format(PROJECT_NAME),
-     author, 'scotia', 'One line description of project.',
-     'Miscellaneous'),
+    (
+        master_doc,
+        PROJECT_NAME,
+        "{} Documentation".format(PROJECT_NAME),
+        author,
+        "scotia",
+        "One line description of project.",
+        "Miscellaneous",
+    )
 ]
-
 
 
 # -- Miscellaneous Extra Tweaks -------------------------------------------
@@ -207,18 +221,18 @@ def linkcode_resolve(domain, info):
     https://github.com/numpy/numpy/blob/master/doc/source/conf.py#L290
     and https://github.com/Lasagne/Lasagne/pull/262
     """
-    if domain != 'py':
+    if domain != "py":
         return None
 
-    modname = info['module']
-    fullname = info['fullname']
+    modname = info["module"]
+    fullname = info["fullname"]
 
     submod = sys.modules.get(modname)
     if submod is None:
         return None
 
     obj = submod
-    for part in fullname.split('.'):
+    for part in fullname.split("."):
         try:
             obj = getattr(obj, part)
         except:
@@ -241,6 +255,9 @@ def linkcode_resolve(domain, info):
     else:
         linespec = ""
 
-    filename = info['module'].replace('.', '/')
+    filename = info["module"].replace(".", "/")
     # filename = '/'.join(filename.split('/')[1:])
-    return "https://github.com/BkrmDahal/utilpy/blob/master/%s.py%s" % (filename, linespec)
+    return "https://github.com/BkrmDahal/utilpy/blob/master/%s.py%s" % (
+        filename,
+        linespec,
+    )

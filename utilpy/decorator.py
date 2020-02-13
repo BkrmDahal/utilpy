@@ -5,25 +5,28 @@ import errno
 import signal
 from functools import wraps
 
+
 class _TimeoutError(Exception):
     """Time out error"""
+
     pass
 
+
 def profile(fnc):
-    
+
     """
     A decorator that uses cProfile to profile a function
     And print the result
     """
-    
+
     def inner(*args, **kwargs):
-        
+
         pr = cProfile.Profile()
         pr.enable()
         retval = fnc(*args, **kwargs)
         pr.disable()
         s = io.StringIO()
-        sortby = 'cumulative'
+        sortby = "cumulative"
         ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
         ps.print_stats()
         print(s.getvalue())
@@ -31,8 +34,9 @@ def profile(fnc):
 
     return inner
 
+
 def threading_d(func):
-  
+
     """
     A decorator to run function in background on thread
     
@@ -44,12 +48,14 @@ def threading_d(func):
 		background_thread: ``Thread``
 		
     """
+
     @wraps(func)
     def wrapper(*args, **kwags):
-        background_thread = Thread(target=func, args=(*args , ))
+        background_thread = Thread(target=func, args=(*args,))
         background_thread.daemon = True
         background_thread.start()
         return background_thread
+
     return wrapper
 
 
@@ -64,6 +70,7 @@ def timeout(seconds=10, error_message=os.strerror(errno.ETIME)):
             Error message
             
     """
+
     def decorator(func):
         def _handle_timeout(signum, frame):
             raise _TimeoutError(error_message)

@@ -4,3 +4,4 @@ pyyaml
 sphinx
 sphinx_rtd_theme
 patool
+loguru

@@ -6,6 +6,7 @@ import patoolib
 
 from .utils import walk_directory, format_filename
 
+
 def _zipdir(dir_path, ziph, exclude=None, include=None):
     """
     write file to zip object
@@ -36,7 +37,7 @@ def _zipdir(dir_path, ziph, exclude=None, include=None):
         else:
             ziph.write(p)
 
-   
+
 def zip_folder(dir_path, filename=None, exclude=None, include=None):
     """
     zip all file in folder, 
@@ -51,15 +52,16 @@ def zip_folder(dir_path, filename=None, exclude=None, include=None):
         include:``list``
             list of file to include
     """
-    
-    if not filename:
-        filename = format_filename(dir_path) + '.zip'
 
-    zipf = zipfile.ZipFile(filename, 'w', zipfile.ZIP_DEFLATED)
+    if not filename:
+        filename = format_filename(dir_path) + ".zip"
+
+    zipf = zipfile.ZipFile(filename, "w", zipfile.ZIP_DEFLATED)
     _zipdir(dir_path, zipf, exclude, include)
     zipf.close()
 
-def unzip_file(filename, save_dir='data'):
+
+def unzip_file(filename, save_dir="data"):
     """
     unzip all file
     
@@ -75,18 +77,19 @@ def unzip_file(filename, save_dir='data'):
 
             apt install rar && apt install unrar
     """
-    
-    # check if save_dir exists  
+
+    # check if save_dir exists
     if not os.path.isdir(save_dir):
         os.makedirs(save_dir)
-    
-    if filename[-3:]=='zip':
-        zip_ref = zipfile.ZipFile(filename, 'r')
+
+    if filename[-3:] == "zip":
+        zip_ref = zipfile.ZipFile(filename, "r")
         zip_ref.extractall(save_dir)
         zip_ref.close()
-    elif filename[-3:]=='rar':
+    elif filename[-3:] == "rar":
         patoolib.extract_archive(filename, outdir=save_dir)
-        
+
+
 def parse_path(path, fn_only=False, ext=False, al=True):
     """get the directory from filename,
     
@@ -104,11 +107,11 @@ def parse_path(path, fn_only=False, ext=False, al=True):
         list of value: ``list``
           
     """
-    
+
     dir_ = os.path.dirname(path)
     filename = os.path.basename(path)
     name, ext = os.path.splitext(filename)
-    
+
     if fn_only:
         return filename
     elif ext:
@@ -117,7 +120,7 @@ def parse_path(path, fn_only=False, ext=False, al=True):
         return dir_, name, ext
     else:
         return dir_
-        
+
 
 def move_file(filename, out_dir):
     """
@@ -130,12 +133,13 @@ def move_file(filename, out_dir):
             output directory
             
     """
-    
+
     # check if out_dir exists
     if not os.path.isdir(out_dir):
         os.makedirs(out_dir)
-        
+
     shutil.move(filename, out_dir)
+
 
 def delete_dirs(folder_names):
     """
@@ -145,7 +149,7 @@ def delete_dirs(folder_names):
         folder_names:`str`` or ``list``
             string or list of folders
     """
-    
+
     if isinstance(folder_names, str):
         shutil.rmtree(folder_names)
         os.makedirs(folder_names)
@@ -155,7 +159,8 @@ def delete_dirs(folder_names):
             os.makedirs(f)
     else:
         raise TypeError("Input should be str or list ")
-        
+
+
 def make_dirs(folder_names):
     """
     make folder if it doesnot exist
@@ -168,6 +173,6 @@ def make_dirs(folder_names):
         if not os.path.exists(folder_names):
             os.makedirs(folder_names)
     elif isinstance(folder_names, list):
-        _ = [ os.makedirs(f) for f in folder_names if not os.path.exists(f) ]
+        _ = [os.makedirs(f) for f in folder_names if not os.path.exists(f)]
     else:
         raise TypeError("Input should be str or list ")

@@ -40,4 +40,19 @@ files = utils.walk_directory('.')
 
 ```
 
+#### other useful code
+1. retry
+```
+# return 
+from retrying import retry
+@retry(wait_random_min=1000, wait_random_max=2000, stop_max_attempt_number=3)
+def sum(x, y):
+    return x/y
+```
+
+2. Memory
+```
+%load_ext memory_profiler
+%mprun -f extract_all_pages x=extract_all_pages()
+```
 ____
